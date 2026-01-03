@@ -1,0 +1,14 @@
+D:\KODES\VSKOD PROJECTS\myProjects\studentConsoleManager\obj\Debug\net9.0\studentConsoleManager.GeneratedMSBuildEditorConfig.editorconfig
+D:\KODES\VSKOD PROJECTS\myProjects\studentConsoleManager\obj\Debug\net9.0\studentConsoleManager.AssemblyInfoInputs.cache
+D:\KODES\VSKOD PROJECTS\myProjects\studentConsoleManager\obj\Debug\net9.0\studentConsoleManager.AssemblyInfo.cs
+D:\KODES\VSKOD PROJECTS\myProjects\studentConsoleManager\obj\Debug\net9.0\studentConsoleManager.csproj.CoreCompileInputs.cache
+D:\KODES\VSKOD PROJECTS\myProjects\studentConsoleManager\bin\Debug\net9.0\studentConsoleManager.exe
+D:\KODES\VSKOD PROJECTS\myProjects\studentConsoleManager\bin\Debug\net9.0\studentConsoleManager.deps.json
+D:\KODES\VSKOD PROJECTS\myProjects\studentConsoleManager\bin\Debug\net9.0\studentConsoleManager.runtimeconfig.json
+D:\KODES\VSKOD PROJECTS\myProjects\studentConsoleManager\bin\Debug\net9.0\studentConsoleManager.dll
+D:\KODES\VSKOD PROJECTS\myProjects\studentConsoleManager\bin\Debug\net9.0\studentConsoleManager.pdb
+D:\KODES\VSKOD PROJECTS\myProjects\studentConsoleManager\obj\Debug\net9.0\studentConsoleManager.dll
+D:\KODES\VSKOD PROJECTS\myProjects\studentConsoleManager\obj\Debug\net9.0\refint\studentConsoleManager.dll
+D:\KODES\VSKOD PROJECTS\myProjects\studentConsoleManager\obj\Debug\net9.0\studentConsoleManager.pdb
+D:\KODES\VSKOD PROJECTS\myProjects\studentConsoleManager\obj\Debug\net9.0\studentConsoleManager.genruntimeconfig.cache
+D:\KODES\VSKOD PROJECTS\myProjects\studentConsoleManager\obj\Debug\net9.0\ref\studentConsoleManager.dll
