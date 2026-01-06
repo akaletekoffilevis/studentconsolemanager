@@ -94,15 +94,15 @@ public class StudentService
         return _students;
     }
 
-    public Student? GetById(int id) => _students.FirstOrDefault(s => s.Id == id);
+    // public Student? GetById(int id) => _students.FirstOrDefault(s => s.Id == id);
 
-    public Student? GetByName(string name) => _students.FirstOrDefault(s => s.Name == name);
+    // public Student? GetByName(string name) => _students.FirstOrDefault(s => s.Name == name);
 
     public Student? GetBySchoolId(string shoolid) => _students.FirstOrDefault(s => s.SchoolId == shoolid);
 
-    public Student? GetByEmail(string mail) => _students.FirstOrDefault(s => s.Email == mail);
+    // public Student? GetByEmail(string mail) => _students.FirstOrDefault(s => s.Email == mail);
 
-    public Student? GetByPhone(string tel) => _students.FirstOrDefault(s => s.Phone == tel);
+    // public Student? GetByPhone(string tel) => _students.FirstOrDefault(s => s.Phone == tel);
 
     public bool DeleteStudent(string shoolid)
     {
@@ -241,4 +241,5 @@ public class StudentService
             Console.ResetColor();
         }
     }
+
 }
