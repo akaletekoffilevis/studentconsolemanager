@@ -136,16 +136,16 @@ public class Menu(StudentService service)
     private void Add()
     {
         Console.Write("  📝 SchoolId: ");
-        var shoolid = Console.ReadLine();
+        var schoolId = Console.ReadLine();
         Console.Write("  📝 Name: ");
         var name = Console.ReadLine();
-        
-        if (string.IsNullOrWhiteSpace(shoolid) || string.IsNullOrWhiteSpace(name))
+
+        if (string.IsNullOrWhiteSpace(schoolId) || string.IsNullOrWhiteSpace(name))
         {
             ShowError("SchoolId and Name are required!");
             return;
         }
-        
+
         Console.Write("  📝 FirstName: ");
         var firstname = Console.ReadLine() ?? "";
         Console.Write("  📝 Class Name: ");
@@ -154,9 +154,9 @@ public class Menu(StudentService service)
         var phone = Console.ReadLine() ?? "";
         Console.Write("  📝 Email: ");
         var email = Console.ReadLine() ?? "";
-        
+
         var errors = new List<string>();
-        if (_service.AddStudent(shoolid, name, firstname, classname, phone, email, errors))
+        if (_service.AddStudent(schoolId, name, firstname, classname, phone, email, errors))
         {
             ShowSuccess("Student added successfully!");
         }
@@ -227,9 +227,9 @@ public class Menu(StudentService service)
     private void Delete()
     {
         Console.Write("  ❌ School ID to delete: ");
-        var shoolid = Console.ReadLine() ?? "";
-        
-        if (_service.DeleteStudent(shoolid))
+        var schoolId = Console.ReadLine() ?? "";
+
+        if (_service.DeleteStudent(schoolId))
         {
             ShowSuccess("Student deleted successfully!");
         }

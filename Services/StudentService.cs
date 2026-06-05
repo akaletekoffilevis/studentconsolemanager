@@ -1,22 +1,24 @@
 
 using studentConsoleManager.Models;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace studentConsoleManager.Services;
 
-using System.Linq;
-using System.Text.Json;
-
 public class StudentService
 {
-    private readonly string secret = "my safe password";
-    private readonly List<Student> _students = new();
+    private readonly string _secret;
+    private readonly List<Student> _students = [];
     private const string DataFilePath = "studentsData.json";
     private int _nextID;
-    private bool _isModified = false;
+    private bool _isModified;
 
     public StudentService()
     {
+        _secret = Environment.GetEnvironmentVariable("STUDENT_MANAGER_SECRET")
+                  ?? Environment.GetEnvironmentVariable("STUDENT_MANAGER_SECRET", EnvironmentVariableTarget.User)
+                  ?? "my safe password";
+
         try
         {
             LoadStudents();
@@ -94,21 +96,13 @@ public class StudentService
         return _students;
     }
 
-    // public Student? GetById(int id) => _students.FirstOrDefault(s => s.Id == id);
+    public Student? GetBySchoolId(string schoolId) => _students.FirstOrDefault(s => s.SchoolId == schoolId);
 
-    // public Student? GetByName(string name) => _students.FirstOrDefault(s => s.Name == name);
-
-    public Student? GetBySchoolId(string shoolid) => _students.FirstOrDefault(s => s.SchoolId == shoolid);
-
-    // public Student? GetByEmail(string mail) => _students.FirstOrDefault(s => s.Email == mail);
-
-    // public Student? GetByPhone(string tel) => _students.FirstOrDefault(s => s.Phone == tel);
-
-    public bool DeleteStudent(string shoolid)
+    public bool DeleteStudent(string schoolId)
     {
-        var studentExit = GetBySchoolId(shoolid);
-        if (studentExit == null) return false;
-        _students.Remove(studentExit);
+        var student = GetBySchoolId(schoolId);
+        if (student == null) return false;
+        _students.Remove(student);
         _isModified = true;
         return true;
     }
@@ -120,13 +114,11 @@ public class StudentService
 
     public bool SecureDelete(string password)
     {
-        if (password == secret)
-        {
-            _students.Clear();
-            _isModified = true;
-            return true;
-        }
-        return false;
+        if (password != _secret) return false;
+
+        _students.Clear();
+        _isModified = true;
+        return true;
     }
 
     public bool IsModified()
